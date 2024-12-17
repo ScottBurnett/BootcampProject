@@ -1,0 +1,235 @@
+/* General Body and Layout Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #102520;
+}
+
+header {
+    color: #ffff;
+    padding-top: 50px;
+    padding-bottom: 0;
+    padding-left: 80px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+main {
+    padding: 20px;
+    margin-top: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #102520;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #102520;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from the link */
+}
+
+nav button {
+    background-color: #102520;
+    color: white; /* White text */
+    padding: 10px 15px; /* Smaller padding to make the button smaller */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 15px; /* Adjust font size to match the tracklist */
+    font-family: 'Inter', sans-serif;
+    border: none; /* Remove button border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease; /* Smooth transition on hover */
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+nav button:hover {
+    background-color: #75FFDC; /* Change background color on hover */
+    color: #102520;
+}
+
+
+/* Album Wrapper and Flex Layout */
+.album-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px; /* Reduced gap for closer columns */
+}
+
+.album-card-container,
+.tracklist-wrapper {
+    width: 48%; /* Adjusted widths to leave space for gap */
+}
+
+/* Album Card Styles */
+.album-card-wrapper {
+    border-radius: 8px; /* Keep the current rounded corners */
+    border: 1px solid #e0e0e0; /* Border same as in albums.css */
+    background-color: #102520; /* Background color same as in albums.css */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Keep the box shadow consistent */
+    text-align: left;
+    padding: 10px;
+    width: 80%; /* Maintain the current card width, you can adjust if needed */
+    margin-top: 70px;
+}
+
+/* Update text color to match albums.css */
+.album-title, .artist-name {
+    color: #75FFDC; /* Same color as in albums.css */
+}
+
+.card-img {
+    width: 100%;  /* Make sure it adapts to container */
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artist-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.artist-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.album-header {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #75FFDC;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.artist-name {
+    font-size: 15px;
+    color: #75FFDC; /* Update text color to match albums.css */
+}
+
+/* Tracklist Styles */
+.tracklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* No Tracks Available Message */
+.tracklist li {
+    color: white; /* Change the text color to white */
+}
+
+.track {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space out track info and duration+button */
+    align-items: center; /* Vertically align items */
+    padding: 12px 0; 
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+}
+
+.track-number {
+    font-size: 16px;
+    color: #ffff;
+    margin-right: 10px;
+}
+
+.track-title {
+    font-size: 18px;
+    color: #ffff;
+}
+
+.track-duration-play-wrapper {
+    display: flex; /* Align duration and play button horizontally */
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+}
+
+.track-duration {
+    font-size: 15px;
+    color: #ff7f50;
+    margin-right: 10px; /* Space between duration and play button */
+}
+
+/* Style the play button consistently, even if it's a link */
+.play-button {
+    background-color: #ff7f50; /* Original button color */
+    color: white; /* Text color */
+    border: none; /* No border for the play button */
+    padding: 8px 15px; /* Padding to match your button style */
+    border-radius: 25px; /* Rounded edges with your specified radius */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease; /* Smooth color transition on hover */
+    text-align: center; /* Center text inside the button */
+    display: inline-block; /* Ensure it behaves like a button */
+    text-decoration: none; /* Remove underline for link */
+    line-height: 1; /* Ensures the height is based on the content */
+    font-size: 16px; /* Adjust the font size for the play icon to be consistent */
+}
+
+/* Hover effect for the play button */
+.play-button:hover {
+    background-color: #ff6347; /* Darker color for hover */
+}
+
+
+
+.play-button:focus {
+    outline: none;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .album-wrapper {
+        flex-direction: column;
+        gap: 20px; /* Adjusted gap for stacked layout */
+    }
+
+    .album-card-container,
+    .tracklist-wrapper {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .track {
+        flex-direction: column;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .track-info {
+        margin-bottom: 10px;
+    }
+
+    .play-button {
+        align-self: center;
+    }
+}

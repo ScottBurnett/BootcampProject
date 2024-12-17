@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    background-color: #102520;
+}
+
+header {
+    color: #f5f5f5;
+    padding-bottom: 0;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 150px;
+}
+
+main {
+    padding: 20px;
+    margin-top: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #102520;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0ffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Remove default link styling */
+.album-link {
+    text-decoration: none;
+    color: inherit; /* Inherit the text color */
+}
+
+/* Hover effect for the link */
+.album-link:hover .album-card-wrapper {
+    transform: translateY(-10px) scale(1.03); /* Slight lift and scaling */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Add transition for hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Album card container */
+.album-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 20px;
+}
+
+.album-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 0 10px;
+    text-align: left;
+    color: #75FFDC;
+}
+
+/* Grid layout for album wrapper */
+.album-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    justify-items: center;
+}
+
+/* Album card styling */
+.album-card-wrapper {
+    background-color: #102520 !important;
+    border: 1px solid #e0e0e0 !important;
+    padding: 10px !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Card image styling */
+.card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Content inside the card */
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Artist info in the card */
+.artist-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Artist image */
+.artist-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+/* Album info inside card */
+.album-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #F8FCFA;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1024px) {
+    .album-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .album-wrapper {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+
+    .album-card-wrapper {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Limit max width */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .album-card-wrapper {
+        width: 100%;
+    }
+}
